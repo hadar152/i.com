@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="3V8QkdSXuY8suWgisfhuNMZLTXKCXY37rM2GM1b31-A">
+    <title>guessthemilion</title>
+</head>
+<body dir="rtl">
+<center>
+<!-- text label -->
+<h1>guessthemilion</h1>
+<b id="total">your point is 0</b>
+<!-- input guess -->
+ <br><br><br>
+<input id="milionword" placeholder="guessnumber" type="number">
+<!-- button guess -->
+<button onclick="guess();addpoint()">guess</button>
+<!-- script guess -->
+<script>
+total = document.getElementById("total")
+totalpoint = 0;
+function addpoint(){
+    totalpoint = totalpoint + 1.5
+    total.innerHTML = " your point is " + totalpoint;
+}
+// body backround color user
+document.body.style.backgroundColor = localStorage.getItem("FavColor")
+// function guess
+function guess(){
+let wordM = document.getElementById("milionword").value
+
+let L = new Audio("lozer.wav") //good sound
+
+let G = new Audio("good.wav") // lozer sound
+
+// guess true
+if(wordM == "1559" || wordM == "1948" || wordM == "1242" || wordM == "3423" || wordM == "1144"){
+alert("good")
+G.play()
+addpoint()
+}
+// guess not true
+else{
+alert("lozer")
+L.play()
+addpoint.remove()
+}
+}
+</script>
+</center>
+</body>
+</html>

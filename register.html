@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body dir="rtl">
+    <center>
+    <h1> דף הרשמה </h1>
+    <input type="text" placeholder="מה שמך ?" id="FullName">
+    <br>
+    <input type="text" placeholder="הכנס שם משתמש " id="UserName">
+    <br>
+    <input type="password" placeholder=" הכנס סיסמא " id="Password">
+    <br>
+    <b>הכנס צבע שאתה אוהב </b>
+    <br><br>
+    <input type="color" id="FavColor">
+    <br><br>
+    <button onclick="submit()">הירשם </button>
+    <script>
+        function submit(){
+        let FullName = document.getElementById("FullName").value
+
+        let UserName = document.getElementById("UserName").value
+
+        let Password = document.getElementById("Password").value
+
+        let FavColor = document.getElementById("FavColor").value
+
+        localStorage.setItem("FullName" ,FullName)
+
+        localStorage.setItem("UserName" ,UserName)
+
+        localStorage.setItem("Password" ,Password)
+
+        localStorage.setItem("FavColor" ,FavColor)
+        window.location = "login.html"
+        }
+    </script>
+</center>
+</body>
+</html>
